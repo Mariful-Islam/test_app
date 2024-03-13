@@ -1,0 +1,222 @@
+$textcolor: #404040;
+$bgcolor: white;
+$bgtextcolor: #4602ffee;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+body {
+    @extend .roboto-regular;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    padding: 0 10%;
+}
+
+// navbar
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.three-line-menu {
+    display: none;
+}
+
+.navbar {
+    @extend .wrapper;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin: 10px;
+    color: $textcolor;
+
+    a {
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 7px;
+        
+
+        &:hover {
+            background-color: $bgtextcolor;
+            color: white;
+        }
+
+        &.active {
+            background-color: $bgtextcolor;
+            color: white;
+        }
+        
+    }
+    
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        padding: 0 10px;
+    }
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 20px 20px 0 0;
+    }
+
+    .navbar {
+        display: none;
+
+    }
+
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .three-line-menu {
+       display: block;
+    }
+
+
+}
+
+
+
+// contact page
+
+.contact {
+    @extend .wrapper;
+    margin-bottom: 50px;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+tr:nth-child(odd) {background-color: #e2e2e2;}
+
+.pagination {
+    margin-top: 30px
+}
+
+
+// contact add
+.contact_form {
+    display: none
+}
+
+.contact_form.active {
+    display: block
+}
+
+
+// contact update
+.contact_update {
+    h2 {
+        text-align: center;
+    }
+
+    form {
+        img {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            
+        }
+    }
+}
+
+
+
+
+
+// profile
+
+.profile {
+    @extend .wrapper;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+
+.profile_image img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+// Form for signup and login
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+    input {
+        height: 30px;
+        border-radius: 5px;
+        outline: $bgtextcolor;
+        border: 1px solid $bgtextcolor;
+        margin: 2px;
+        padding: 0 10px;
+        text-align: start;
+        
+    }
+
+    input[type='file'] {
+        border: none;
+        outline: none;
+        width: 180px;
+    }
+  
+    &:focus {
+    outline: $bgtextcolor;
+    box-shadow: 0 0 0 0.1rem $bgtextcolor;
+    }
+
+}
+
+select {
+    @extend input;
+    width: 180px;
+}
+
+
+  @media screen and (max-width: 600px) {
+    form {
+        input {
+        width: 90%;
+    }
+
+
+        input[type='submit' ]{
+            width: 50%;
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+  }
