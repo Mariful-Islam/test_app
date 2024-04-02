@@ -12,3 +12,4 @@ Then run this command
 `docker-compose up --build`
 
 To open frontend visit this link http://localhost:8080.
+to open backend visit this link http://localhost:8000
